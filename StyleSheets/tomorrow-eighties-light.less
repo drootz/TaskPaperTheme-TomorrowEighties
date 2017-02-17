@@ -1,0 +1,336 @@
+// Base -----------------------------------
+@font-family: Hack, Source Code Pro;
+@font-family: -apple-user;
+@font-family: Lato;
+@base-font-size: 16;
+@user-font-size: $USER_FONT_SIZE;
+@ui-scale: @user-font-size / @base-font-size;
+@line-height-multiple: 1.4;
+@handle-size: floor(9 * @ui-scale);
+
+@bg_color: #F5F5F0;
+@_current-line: darken(@bg_color, 4%);
+@_selection: darken(@bg_color, 10%);
+@fg_color: #2d2d2d;
+@neutral: #808080;
+
+@1____: darken(#f2777a,20%);
+@2____: darken(#f99157,20%);
+@3____: darken(#ffcc66,20%);
+@4____: darken(#99cc99,25%);
+@5____: darken(#66cccc,20%);
+@6____: darken(#6699cc,20%);
+@7____: darken(#cc99cc,20%);
+
+
+// Base colors -----------------------------------
+@project-color: @fg_color;
+@text-color: @fg_color;
+@bg-color: @bg_color;
+@message-color: mix(@text-color, @bg-color, 50%);
+@tag-color: fade(@fg_color, 65%);
+
+// UI Colors -----------------------------------
+@tint-color: @1____;
+@interface-color: @tint-color;
+@selection-color: @_selection;
+@invisibles-color: fade(@tint-color, 50%);
+@guide-color: lighten(@fg_color, 26%);
+
+window {
+  appearance: NSAppearanceNameVibrantLight;
+}
+
+searchbar {
+  background-color: #d6d6d6;
+  placeholder-color: fade(@text-color, 65%);
+  color: @text-color;
+  secondary-text-color: @4____;
+  error-text-color: @1____;
+}
+
+
+editor {
+    color: @text-color;
+    font-size: @user-font-size;
+    font-family: @font-family;
+    background-color: @bg-color;
+    line-height-multiple: @line-height-multiple;
+    // item-handle-size: 6;
+    item-indent: 15px * @ui-scale;
+    caret-width: floor(4 * @ui-scale);
+    caret-color: lighten(@1____,20%);
+    handle-color: @guide-color;
+    drop-indicator-color: @tint-color;
+    invisibles-color: @invisibles-color;
+    selection-background-color: @selection-color;
+    guide-line-width: floor(0.5 * @ui-scale);
+    guide-line-color: mix(@guide-color,@bg-color, 40%);
+    message-color: @message-color;
+    // top-padding-percent: 20%; // Pad top of editor with 25% of viewport height
+    bottom-padding-percent: 40%; // Pad bottom of editor with 25% of viewport height
+    // editor-wrap-to-column: 80; // Wrap editor text at 80 columns, center if extra space
+    // item-wrap-to-column: 60; // Wrap item text at 60 columns (smaller value them above means item text doesn't rewrap when item is indented
+    typewriter-scroll-percent: 50%; // Scroll edit location to 50% location in viewport when possible
+}
+
+item[data-type=project] {
+  font-size: floor(26 * @ui-scale);
+}
+
+item[depth=1][data-type=project] {
+    font-weight: 900;
+    color: @project-color;
+    paragraph-spacing-before: 20;
+    paragraph-spacing-after: 3;
+}
+item[depth=2][data-type=project] {
+    font-weight: 900;
+    font-size: floor(22 * @ui-scale);
+    // font-size: 17;
+    color: fade(@project-color, 100%);
+    paragraph-spacing-before: 20;
+    paragraph-spacing-after: 3;
+}
+item[depth=3][data-type=project] {
+    font-weight: 900;
+    font-size: floor(20 * @ui-scale);
+    color: fade(@project-color, 100%);
+    paragraph-spacing-before: 20;
+    paragraph-spacing-after: 3;
+}
+item[depth=4][data-type=project] {
+    font-weight: 900;
+    font-size: floor(18 * @ui-scale);
+    color: fade(@project-color, 100%);
+    paragraph-spacing-before: 20;
+    paragraph-spacing-after: 3;
+}
+item[data-type="task"] {
+    font-style: normal;
+}
+item[data-type="note"] {
+    // font-size: 14;
+    color: @neutral;
+    line-height-multiple: 1;
+    paragraph-spacing-after: 5;
+    font-style: italic;
+}
+
+// Handle styles -----------------------------------
+item {
+  // handle-size: 8;
+  handle-color: none;
+  handle-border-color: @guide-color ;
+  handle-border-width: 0.5;
+  // handle-border-width: floor(1 * @ui-scale);
+}
+
+item[collapsed] {
+  handle-color: @6____;
+  handle-border-color: @6____;
+}
+
+item[filtered] {
+  handle-color: @tag-color;
+  handle-border-color: @tag-color;
+}
+
+item[empty] {
+  handle-color: none;
+  handle-border-color: none;
+}
+
+item[leaf] {
+  handle-color: none;
+  handle-border-color: none;
+}
+
+
+item[mouseOverHandle] {
+  handle-size: @handle-size + (1.5 * @ui-scale);
+}
+
+// Tag styles -----------------------------------
+
+item[data-context] {
+    > run[tag] {
+        color: fade(@text-color, 65%);
+    }
+    > run[tagvalue] {
+      color: fade(@text-color, 100%);
+    }
+    > run[tagvalue="home"] {
+      color: fade(@4____, 100%);
+    }
+    > run[tagvalue="work"] {
+      color: fade(@6____, 100%);
+    }
+    > run[tagvalue="IO"] {
+      color: fade(@7____, 100%);
+    }
+    > run[tagvalue="errands"] {
+      color: fade(@3____, 100%);
+    }
+}
+item[data-today] {
+    font-size: @user-font-size;
+    font-style: normal;
+    font-weight: normal;
+    color: @4____;
+    > run[tag] {
+        // color: fade(@4____, 65%);
+    }
+}
+item[data-flag] {
+    font-size: @user-font-size;
+    font-style: normal;
+    font-weight: normal;
+    color: @2____;
+    > run[tag] {
+        // color: fade(@2____, 65%);
+    }
+}
+item[data-due] {
+    font-size: @user-font-size;
+    font-style: normal;
+    font-weight: normal;
+    color: @text-color;
+    > run[tag] {
+        // color: fade(@3____, 65%);
+    }
+    > run[tagvalue] {
+      // color: fade(@text-color, 100%);
+    }
+}
+item[data-overdue] {
+    font-size: @user-font-size;
+    font-style: normal;
+    font-weight: normal;
+    color: @1____;
+    > run[tag] {
+        color: fade(@1____, 65%);
+    }
+    // Just the tag values (between the parentheses).
+    > run[tagvalue] {
+      color: fade(@text-color, 100%);
+    }
+    > run[tagvalue="home"] {
+      color: fade(@4____, 100%);
+    }
+    > run[tagvalue="work"] {
+      color: fade(@6____, 100%);
+    }
+    > run[tagvalue="IO"] {
+      color: fade(@7____, 100%);
+    }
+    > run[tagvalue="errands"] {
+      color: fade(@3____, 100%);
+    }
+}
+item[data-priority] {
+    font-size: @user-font-size;
+    font-style: normal;
+    font-weight: normal;
+    color: @1____;
+    > run[tag] {
+        color: fade(@1____, 65%);
+    }
+    // Just the tag values (between the parentheses).
+    > run[tagvalue] {
+      color: fade(@text-color, 100%);
+    }
+    > run[tagvalue="home"] {
+      color: fade(@4____, 100%);
+    }
+    > run[tagvalue="work"] {
+      color: fade(@6____, 100%);
+    }
+    > run[tagvalue="IO"] {
+      color: fade(@7____, 100%);
+    }
+    > run[tagvalue="errands"] {
+      color: fade(@3____, 100%);
+    }
+    > run[tagvalue=high],
+    > run[tagvalue="1"],
+    > run[tagvalue="2"],
+    > run[tagvalue="3"],
+    > run[tagvalue="4"],
+    > run[tagvalue="5"] {
+      color: #f00;
+      font-weight: bold;
+    }
+}
+item[data-waitingFor],
+item[data-f_up] {
+    font-size: @user-font-size;
+    font-style: normal;
+    font-weight: normal;
+    color: fade(@7____, 65%);
+    > run[tag] {
+        // color: fade(@7____, 65%);
+    }
+}
+item[data-defer] {
+    font-size: @user-font-size;
+    font-style: normal;
+    font-weight: normal;
+    color: fade(@7____, 35%);
+    > run[tag] {
+        // color: fade(@7____, 35%);
+    }
+}
+item[data-maybe] {
+    font-size: @user-font-size;
+    font-style: normal;
+    font-weight: normal;
+    color: fade(@text-color, 35%);
+    > run[tag] {
+        color: fade(@text-color, 35%);
+    }
+}
+item[data-search] {
+    font-size: @user-font-size;
+    font-style: normal;
+    font-weight: normal;
+    color: @text-color;
+    > run[tag] {
+        color: fade(@text-color, 65%);
+    }
+}
+item[data-done] {
+    > run[content] {
+        text-strikethrough: NSUnderlineStyleSingle;
+        text-strikethrough-color: fade(@text-color, 35%);
+        color: fade(@text-color, 35%);
+    }
+    > run[tag] {
+        text-strikethrough: NSUnderlineStyleSingle;
+        text-strikethrough-color: fade(@text-color, 35%);
+        color: fade(@text-color, 35%);
+    }
+}
+run[link] {
+    cursor: pointer;
+    color: #1EAEDB;
+    text-underline: NSUnderlineStyleSingle;
+}
+run[lead] {
+    color: fade(@text-color, 50%);
+    text-underline: NSUnderlineStyleNone;
+}
+run[link^="filter"] {
+    color: @text-color;
+    text-underline: NSUnderlineStyleNone;
+}
+run[tag] {
+    font-size: @user-font-size;
+    font-style: normal;
+    font-weight: normal;
+    color: fade(@text-color, 65%);
+    text-underline: NSUnderlineStyleNone;
+}
+run[tagvalue] {
+  color: fade(@text-color, 100%);
+}
