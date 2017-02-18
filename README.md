@@ -1,10 +1,11 @@
 # Configuration Files and StyleSheets for TaskPaper v3.5+
+> [Github repo](https://github.com/drootz/TaskPaperTheme-TomorrowEighties)
 
 * *Tomorrow Night Eighties* inspired themes
 * *Omnifocus* inspired default searches and tags/contexts
 
-![Preview of a taskpaper with the Dark StyleSheet applied](preview/dark.png)
-![Preview of a taskpaper with the Light StyleSheet applied](preview/light.png)
+![Preview of a taskpaper with the Dark StyleSheet applied](https://raw.githubusercontent.com/drootz/TaskPaperTheme-TomorrowEighties/master/preview/dark.png)
+![Preview of a taskpaper with the Light StyleSheet applied](https://raw.githubusercontent.com/drootz/TaskPaperTheme-TomorrowEighties/master/preview/light.png)
 
 These StyleSheets and Configuration Files for [TaskPaper](http://www.taskpaper.com) is great if:
 
@@ -29,7 +30,8 @@ These StyleSheets and Configuration Files for [TaskPaper](http://www.taskpaper.c
     - I recommend backing up the files from within /`Application Support` > `Taskpaper` > `Configurations` before proceeding in case you want to revert to the default settings at a later date.
 4. Done.
 
-[download]: https://github.com/
+[download]: https://github.com/drootz/TaskPaperTheme-TomorrowEighties/archive/v1.1.zip
+
 
 
 ## 💙 TaskPaper
