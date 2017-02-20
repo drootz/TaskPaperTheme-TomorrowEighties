@@ -173,13 +173,16 @@ item[data-context] {
       color: fade(@3____, 100%);
     }
 }
-item[data-today] {
+item[data-due] {
     font-size: @user-font-size;
     font-style: normal;
     font-weight: normal;
-    color: @4____;
+    color: @text-color;
     > run[tag] {
-        // color: fade(@4____, 65%);
+        // color: fade(@3____, 65%);
+    }
+    > run[tagvalue] {
+      color: fade(@text-color, 100%);
     }
 }
 item[data-flag] {
@@ -191,19 +194,33 @@ item[data-flag] {
         // color: fade(@2____, 65%);
     }
 }
-item[data-due] {
+item[data-today],
+item[data-dueToday] {
     font-size: @user-font-size;
     font-style: normal;
     font-weight: normal;
-    color: @text-color;
+    color: @4____;
     > run[tag] {
-        // color: fade(@3____, 65%);
+        color: fade(@4____, 65%);
     }
     > run[tagvalue] {
-      // color: fade(@text-color, 100%);
+      color: fade(@text-color, 100%);
     }
 }
-item[data-overdue] {
+item[data-dueTomorrow] {
+    font-size: @user-font-size;
+    font-style: normal;
+    font-weight: normal;
+    color: @3____;
+    > run[tag] {
+        color: fade(@3____, 65%);
+    }
+    > run[tagvalue] {
+      color: fade(@text-color, 100%);
+    }
+}
+item[data-overdue],
+item[data-pastDue] {
     font-size: @user-font-size;
     font-style: normal;
     font-weight: normal;
@@ -320,6 +337,11 @@ run[lead] {
     color: fade(@text-color, 50%);
     text-underline: NSUnderlineStyleNone;
 }
+// run[link^="button"] {
+//   color: @text-color;
+//   text-underline: NSUnderlineStyleNone;
+//   font-weight: 100;
+// }
 run[link^="filter"] {
     color: @text-color;
     text-underline: NSUnderlineStyleNone;

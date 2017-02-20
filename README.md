@@ -1,4 +1,4 @@
-# Configuration Files and StyleSheets for TaskPaper v3.5+
+# Configuration Files, StyleSheets ans Scripts for TaskPaper v3.5+
 > [Github repo](https://github.com/drootz/TaskPaperTheme-TomorrowEighties)
 
 * *Tomorrow Night Eighties* inspired themes
