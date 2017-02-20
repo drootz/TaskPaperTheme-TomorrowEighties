@@ -30,6 +30,13 @@ These StyleSheets and Configuration Files for [TaskPaper](http://www.taskpaper.c
     - I recommend backing up the files from within /`Application Support` > `Taskpaper` > `Configurations` before proceeding in case you want to revert to the default settings at a later date.
 4. Done.
 
+## Scripts
+
+1. [Download the zip][download] and open the zip folder
+2. The scripts and Keyboard Maestro macros are accessible in the `scripts` folder from the zip
+    - `dueRefresh` = Script that add/amend/remove tags to "@dueTomorrow", "@dueToday" and "@pastDue" items when the due tag/date match "@due(yyyy-mm-dd)".
+3. General script usage instructions available on TP3 guide and support forum.
+
 [download]: https://github.com/drootz/TaskPaperTheme-TomorrowEighties/archive/v1.1.zip
 
 
