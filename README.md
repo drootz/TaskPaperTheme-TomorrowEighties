@@ -37,7 +37,7 @@ These StyleSheets and Configuration Files for [TaskPaper](http://www.taskpaper.c
     - `dueRefresh` = Script that add/amend/remove tags to "@dueTomorrow", "@dueToday" and "@pastDue" items when the due tag/date match "@due(yyyy-mm-dd)".
 3. General script usage instructions available on TP3 guide and support forum.
 
-[download]: https://github.com/drootz/TaskPaperTheme-TomorrowEighties/archive/v1.1.zip
+[download]: https://github.com/drootz/TaskPaperTheme-TomorrowEighties/archive/v1.2.zip
 
 
 
