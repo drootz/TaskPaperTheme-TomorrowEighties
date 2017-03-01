@@ -1,4 +1,4 @@
-# Configuration Files, StyleSheets ans Scripts for TaskPaper v3.5+
+# Configuration Files, StyleSheets ans Scripts for TaskPaper
 <!-- > [Github repo](https://github.com/drootz/TaskPaperTheme-TomorrowEighties) -->
 
 * *Tomorrow Night Eighties* inspired themes
@@ -37,7 +37,7 @@ These StyleSheets and Configuration Files for [TaskPaper](http://www.taskpaper.c
     - `dueRefresh` = Script that add/amend/remove tags to `@dueTomorrow`, `@dueToday` and `@pastDue` items when the due tag/date match `@tagName(yyyy-mm-dd)`.
       - It remove any `@defer` tags if the tag date expired (ex. `@defer(2011-03-02)` where the date is <= today)
       - It does not add @pastDue tags on items tagged with `@done`, `@status(completed)`, `@status(delivered)` or `@status(cancelled)`
-    - `doneSort` = Script that sort @done items at the bottom of the project list of items in ascending order. Items with a @status tag are then pushed completely at the bottom and sorted by ascending @done date.
+    - `doneSort` = Script that group and sort @done items at the bottom of the project list of items in ascending order. Items with a @status tag are then pushed completely at the bottom and sorted by ascending @done date.
 3. General script usage instructions available on TP3 guide and support forum.
 
 [download]: https://github.com/drootz/TaskPaperTheme-TomorrowEighties/archive/v1.3.zip

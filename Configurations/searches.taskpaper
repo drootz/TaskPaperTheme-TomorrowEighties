@@ -2,39 +2,79 @@ This is a configuration outline. Use it to store searches that you want to show 
 
 Searches:
 	
-	Next Actions (single) @search(project *//not @defer >[d] today and not @maybe and not @reccurence and not @type = note and not @done[0])
-	Next Actions (all) @search(not @defer >[d] today and not @maybe and not @reccurence and not @type = note and not @done)
-	Flagged @search(not @done and not @defer >[d] today and @flag)
-	Overdue @search(not @done and @overdue or @due <=[d] today)
+	___________________________________ @search( )
+	GET THINGS REVIEWED @search( )
 	
-	- @search(*)
+	- @search( )
 	
-	Waiting For @search(not @done and not @defer >[d] today and @waitingFor)
-	Follow-Up Due @search(not @done and not @defer >[d] today and @f_up <=[d] today)
+	All Metadata & Tasks @search(//@type = project and \(@status = active or @status = ongoing or @status = hold\)//* and not @done)
+	All Metadata @search(//@type = project and \(@status = active or @status = ongoing or @status = hold\)//@type = note and not @done except @type = task//*)
+	All Tasks @search(//@type = project and \(@status = active or @status = ongoing or @status = hold\)//@type = task and not @done union //@type = task and not @done/*)
 	
-	- @search(*)
+	___________________________________ @search( )
+	GET THINGS DONE @search( )
 	
-	Due Today @search(not @done and @today or @due =[d] today or @due <=[d] today +1d and @due >=[d] today)
-	Due within 7 days @search(not @done and @due <=[d] today +7d and @due >=[d] today +1d)
+	- @search( )
 	
-	- @search(*)
+	Today at a Glace @search(//@type = project and \(@status = active or @status = ongoing or @status = hold or @ol or @ul\)//\(@today or @due <=[d] today or today or @f_up <=[d] today or @agenda <=[d] today\) and not @done except \(@status = delivered or @status = completed or @status = cancelled\))
+	Overdue @search(//@type = project and \(@status = active or @status = ongoing or @status = hold or @ol or @ul\)//\(@overdue or @due <[d] today or @f_up <[d] today or @agenda <[d] today\) and not @done except \(@status = delivered or @status = completed or @status = cancelled\))
+	Due Today @search(//@type = project and \(@status = active or @status = ongoing or @status = hold or @ol or @ul\)//\(@today or @due =[d] today or @f_up =[d] today or @agenda =[d] today\) and not @done except \(@status = delivered or @status = completed or @status = cancelled\))
+	Next Actions - (single) @search(//@type = project and \(@status = active or @status = ongoing or @status = hold or @ol or @ul\)//not @metadata and not @agenda and not @defer >[d] today and not @maybe and not @reccurence and not @type = note and not @done[0] except \(@status = delivered or @status = completed or @status = cancelled\))
+	Next Actions - (all) @search(//@type = project and \(@status = active or @status = ongoing or @status = hold or @ol or @ul\)//not @metadata and not @agenda and not @defer >[d] today and not @maybe and not @reccurence and not @type = note and not @done except \(@status = delivered or @status = completed or @status = cancelled\))
 	
-	Priority: High @search(not @done and not @defer >[d] today and @priority = [i]high or @priority = 1 or @priority = 2 or @priority = 3 or @priority = 4 or @priority = 5)
-	Priority: Medium @search(not @done and not @defer >[d] today and @priority = [i]medium or @priority = 6 or @priority = 7 or @priority = 8 or @priority = 9 or @priority = 10)
+	- @search( )
 	
-	- @search(*)
+	Flagged @search(//@type = project and \(@status = active or @status = ongoing or @status = hold or @ol or @ul\)//not @done and not @defer >[d] today and @flag)
+	Priority: High @search(//@type = project and \(@status = active or @status = ongoing or @status = hold or @ol or @ul\)//not @defer >[d] today and \(@priority = [i]high or @priority = 1 or @priority = 2 or @priority = 3 or @priority = 4 or @priority = 5\) and not @done)
+	Priority: Medium @search(//@type = project and \(@status = active or @status = ongoing or @status = hold or @ol or @ul\)//not @defer >[d] today and \(@priority = [i]medium or @priority = 6 or @priority = 7 or @priority = 8 or @priority = 9 or @priority = 10\) and not @done)
 	
-	Deferred @search(not @done and @defer)
-	Defer Over Soon @search(not @done and @defer <=[d] today +7d and @defer >[d] today)
+	- @search( )
 	
-	- @search(*)
+	Tomorrow at a Glance @search(//@type = project and \(@status = active or @status = ongoing or @status = hold or @ol or @ul\)//\(@tomorrow or @due =[d] today +1day or @f_up =[d] today +1day or @agenda =[d] today +1day\) and not @done except \(@status = delivered or @status = completed or @status = cancelled\))
+	Due within next 5 days @search(//@type = project and \(@status = active or @status = ongoing or @status = hold or @ol or @ul\)//\(\(@due <=[d] today +5d and @due >=[d] today +1d\) or \(@f_up <=[d] today +5d and @f_up >=[d] today +1d\) or \(@agenda <=[d] today +5d and @agenda >=[d] today +1d\)\) and not @done except \(@status = delivered or @status = completed or @status = cancelled\))
+	Follow-Up - (all) @search(//@type = project and \(@status = active or @status = ongoing or @status = hold or @ol or @ul\)//not @defer >[d] today and @f_up and not @done except \(@status = delivered or @status = completed or @status = cancelled\))
+	Waiting without Follow-Up @search(//@type = project and \(@status = active or @status = ongoing or @status = hold or @ol or @ul\)//not @defer >[d] today and not @f_up and @waitingFor and not @done except \(@status = delivered or @status = completed or @status = cancelled\))
+	Waiting - (all) @search(//@type = project and \(@status = active or @status = ongoing or @status = hold or @ol or @ul\)//not @defer >[d] today and @waitingFor and not @done except \(@status = delivered or @status = completed or @status = cancelled\))
 	
-	Someday Maybe @search(not @done and not @defer >[d] today and @maybe)
+	- @search( )
+	- 
+	Deferred in ≤5days @search(//@type = project and \(@status = active or @status = ongoing or @status = hold or @ol or @ul\)//@defer <=[d] today +5d and @defer >[d] today and not @done except \(@status = delivered or @status = completed or @status = cancelled\))
+	Deferred in >5days @search(//@type = project and \(@status = active or @status = ongoing or @status = hold or @ol or @ul\)//@defer >[d] today +5d and not @done except \(@status = delivered or @status = completed or @status = cancelled\))
 	
-	- @search(*)
+	- @search( )
 	
-	Context: None @search(not @done and not @defer >[d] today and not @context)
-	Context: Work @search(not @done and not @defer >[d] today and @context = [i]work)
-	Context: Home @search(not @done and not @defer >[d] today and @context = [i]home)
-	Context: Computer @search(not @done and not @defer >[d] today and @context = [i]IO)
-	Context: Errands @search(not @done and not @defer >[d] today and @context = [i]errands)
+	Show Reporting Activities @search(@report and not @done)
+	Show Recurrent Activities @search(@reccurence and not @done)
+	
+	- @search( )
+	
+	Someday Maybe @search(not @defer >[d] today and @maybe and not @done)
+	
+	___________________________________ @search( )
+	METADATA & REPORTING @search( )
+	
+	- @search( )
+	
+	Key Deliverables - Current @search(//@type = project and \(@status = active\)//@keyDeliverable >=[d] today -7d and @keyDeliverable <=[d] today +7d)
+	Key Deliverables - (all) @search(//@type = project and \(@status = active\)//@keyDeliverable)
+	Accomplishments @search(//@type = project and \(@status = active\)//@accomplishment)
+	
+	- @search( )
+	
+	PJC Active @search(//@type = project and \(@status = active\)//@type = note)
+	PJC on Hold @search(//@type = project and \(@status = hold\)//@type = note)
+	PJC Completed @search(//@type = project and \(@status = cancelled or @status = delivered or @status = completed\) and not RIC-//@type = note)
+	RIC Completed @search(//@type = project and \(@status = cancelled or @status = delivered or @status = completed\) and RIC-)
+	PJC without Status @search(//@type = project and not \(@status = active or @status = ongoing or @status = hold or @status = completed or @status = open or @status = closed or @status = cancelled or @status = delivered or @ol or @ul or @metadata or @section\)//@type = note)
+	
+	- @search( )
+	
+	Capacity / Forecast @search(//@type = project and \(@status = active or @status = hold or @status = ongoing\)//@capacity)
+	Clarity - Build @search(//@type = project and \(@status = active or @status = hold or @status = ongoing\)//@clarity-build)
+	Clarity - Run @search(//@type = project and \(@status = active or @status = hold or @status = ongoing\)//@clarity-run)
+	Clarity - Formal Training @search(//@type = project and \(@status = active or @status = hold or @status = ongoing\)//@clarity-training)
+	
+	- @search( )
+	
+	Completed Tasks - (all) @search(@type = task and @done)
+	Incomplete Tasks / Completed Projects @search(//@type = project and \(@status = cancelled or @status = delivered or @status = completed\)//@type = task and not @done)
