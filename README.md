@@ -41,11 +41,11 @@ These StyleSheets and Configuration Files for [TaskPaper](http://www.taskpaper.c
 
 #### "dueRefresh" script output example:
 
-![Preview of a taskpaper with the Light StyleSheet applied](https://raw.githubusercontent.com/drootz/TaskPaperTheme-TomorrowEighties/master/preview/light.png)
+![Preview of a taskpaper with the Light StyleSheet applied](https://raw.githubusercontent.com/drootz/TaskPaperTheme-TomorrowEighties/master/scripts/dueRefresh/dueRefreshScriptExample.png)
 
 #### "doneSort" script output example:
 
-![Preview of a taskpaper with the Light StyleSheet applied](https://raw.githubusercontent.com/drootz/TaskPaperTheme-TomorrowEighties/master/preview/light.png)
+![Preview of a taskpaper with the Light StyleSheet applied](https://raw.githubusercontent.com/drootz/TaskPaperTheme-TomorrowEighties/master/scripts/doneSort/doneSortScriptExample.png)
 
 [download]: https://github.com/drootz/TaskPaperTheme-TomorrowEighties/archive/v1.4.zip
 
