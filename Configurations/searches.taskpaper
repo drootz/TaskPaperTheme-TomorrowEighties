@@ -2,9 +2,8 @@ This is a configuration outline. Use it to store searches that you want to show 
 
 Searches:
 	
-	Not Done @search(not @done)
-	Next Actions (single) @search(project *//not @defer >[d] today and not @maybe and not @note and not @done[0])
-	Next Actions (all) @search(not @defer >[d] today and not @maybe and not @note and not @done)
+	Next Actions (single) @search(project *//not @defer >[d] today and not @maybe and not @reccurence and not @type = note and not @done[0])
+	Next Actions (all) @search(not @defer >[d] today and not @maybe and not @reccurence and not @type = note and not @done)
 	Flagged @search(not @done and not @defer >[d] today and @flag)
 	Overdue @search(not @done and @overdue or @due <=[d] today)
 	
@@ -25,17 +24,17 @@ Searches:
 	
 	- @search(*)
 	
-	Context: None @search(not @done and not @defer >[d] today and not @context)
-	Context: Work @search(not @done and not @defer >[d] today and @context = [i]work)
-	Context: Home @search(not @done and not @defer >[d] today and @context = [i]home)
-	Context: Computer @search(not @done and not @defer >[d] today and @context = [i]IO)
-	Context: Errands @search(not @done and not @defer >[d] today and @context = [i]errands)
-	
-	- @search(*)
-	
 	Deferred @search(not @done and @defer)
 	Defer Over Soon @search(not @done and @defer <=[d] today +7d and @defer >[d] today)
 	
 	- @search(*)
 	
 	Someday Maybe @search(not @done and not @defer >[d] today and @maybe)
+	
+	- @search(*)
+	
+	Context: None @search(not @done and not @defer >[d] today and not @context)
+	Context: Work @search(not @done and not @defer >[d] today and @context = [i]work)
+	Context: Home @search(not @done and not @defer >[d] today and @context = [i]home)
+	Context: Computer @search(not @done and not @defer >[d] today and @context = [i]IO)
+	Context: Errands @search(not @done and not @defer >[d] today and @context = [i]errands)

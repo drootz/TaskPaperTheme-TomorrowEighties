@@ -16,7 +16,10 @@
 						<key>MacroActionType</key>
 						<string>Comment</string>
 						<key>Text</key>
-						<string>Script to add tags to "@dueTomorrow", "@dueToday" and "@pastDue" items when due tag/date match "@due(yyyy-mm-dd)" format. Works well when chained to this script that convert informal date to "yyyy-mm-dd" date format (with Keyboard Maestro) : https://forum.keyboardmaestro.com/t/convert-informal-date-times-to-yyyy-mm-dd-hh-mm-in-taskpaper-3-preview/2941
+						<string>Script to add/amend/remove tags to "@dueTomorrow", "@dueToday" and "@pastDue" items when due tag/date match "@due(yyyy-mm-dd)" format. Works well when chained to this script that convert informal date to "yyyy-mm-dd" date format (with Keyboard Maestro) : https://forum.keyboardmaestro.com/t/convert-informal-date-times-to-yyyy-mm-dd-hh-mm-in-taskpaper-3-preview/2941
+
+- removes @defer tags if date expired (ex. @defer(2011-03-02) is today or in the past)
+- removes @pastDue tags on tasks and project @done, @status(completed), @status(delivered) or @status(cancelled)
 
 The following theme support the "@dueTomorrow", "@dueToday" and "@pastDue" tags styling with yellow,green and red colors : http://support.hogbaysoftware.com/t/theme-tomorrow-night-eighties-inspired-theme-dark-light-with-omnifocus-like-searches-tags/2954 </string>
 						<key>Title</key>
@@ -32,13 +35,25 @@ The following theme support the "@dueTomorrow", "@dueToday" and "@pastDue" tags 
 						<key>Path</key>
 						<string>/Users/dracine/Library/Application Scripts/com.hogbaysoftware.TaskPaper3.direct/_dueRefresh.scpt</string>
 						<key>Text</key>
-						<string>function TaskPaperContextScript(editor, options) {
+						<string>// Script to add tags to "@dueTomorrow", "@dueToday" and "@pastDue" items when due tag/date match "@due(yyyy-mm-dd)" format. Works well when chained to this script that convert informal date to "yyyy-mm-dd" date format (with Keyboard Maestro) : https://forum.keyboardmaestro.com/t/convert-informal-date-times-to-yyyy-mm-dd-hh-mm-in-taskpaper-3-preview/2941
+// This theme support the "@dueTomorrow", "@dueToday" and "@pastDue" tags styling with yellow,green and red colors : http://support.hogbaysoftware.com/t/theme-tomorrow-night-eighties-inspired-theme-dark-light-with-omnifocus-like-searches-tags/2954 
+
+function TaskPaperContextScript(editor, options) {
     var today = DateTime.format('today');
     var outline = editor.outline;
     
-
     outline.groupUndoAndChanges(function () {
 
+      outline.evaluateItemPath('//@defer = [d] today')
+      .forEach(function (each) {
+        each.removeAttribute('data-defer');
+      });
+      
+      outline.evaluateItemPath('//@defer &lt; [d] today')
+      .forEach(function (each) {
+        each.removeAttribute('data-defer');
+      });
+      
       outline.evaluateItemPath('//@dueToday')
       .forEach(function (each) {
         each.removeAttribute('data-dueToday');
@@ -54,19 +69,24 @@ The following theme support the "@dueTomorrow", "@dueToday" and "@pastDue" tags 
         each.removeAttribute('data-pastDue');
       });
 
-      outline.evaluateItemPath('//@due = [d] today')
+      outline.evaluateItemPath('//not @done and @due = [d] today')
       .forEach(function (each) {
         each.setAttribute('data-dueToday', '');
       });
 
-      outline.evaluateItemPath('//@due = [d] tomorrow')
+      outline.evaluateItemPath('//not @done and @due = [d] tomorrow')
       .forEach(function (each) {
         each.setAttribute('data-dueTomorrow', '');
       });
 
-      outline.evaluateItemPath('//@due &lt; [d] today')
+      outline.evaluateItemPath('//not @done and @due &lt; [d] today')
       .forEach(function (each) {
         each.setAttribute('data-pastDue', '');
+      });
+	  
+      outline.evaluateItemPath('//(@status = delivered or @status = cancelled or @status = completed) and @due &lt; [d] today')
+      .forEach(function (each) {
+        each.removeAttribute('data-pastDue', '');
       });
 
     });
@@ -438,7 +458,7 @@ Application("TaskPaper")
 				<key>IsActive</key>
 				<false/>
 				<key>ModificationDate</key>
-				<real>509264893.34766799</real>
+				<real>509603956.15962601</real>
 				<key>Name</key>
 				<string>Refresh due dates tags when a new taskpaper file open or focus</string>
 				<key>Triggers</key>
