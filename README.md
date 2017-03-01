@@ -1,5 +1,4 @@
-# Configuration Files, StyleSheets ans Scripts for TaskPaper
-<!-- > [Github repo](https://github.com/drootz/TaskPaperTheme-TomorrowEighties) -->
+# Configuration Files, StyleSheets and Scripts for TaskPaper3
 
 * *Tomorrow Night Eighties* inspired themes
 * *Omnifocus* inspired default searches and tags/contexts
@@ -30,17 +29,25 @@ These StyleSheets and Configuration Files for [TaskPaper](http://www.taskpaper.c
     - I recommend backing up the files in `/Application Support/Taskpaper/Configurations` before proceeding in case you need to revert to the default settings at a later date.
 4. Done.
 
-## Scripts
+## Get the Scripts
 
 1. [Download the zip][download] and open the zip directory
-2. The scripts and Keyboard Maestro macros are accessible in the `scripts` directory from the zip
-    - `dueRefresh` = Script that add/amend/remove tags to `@dueTomorrow`, `@dueToday` and `@pastDue` items when the due tag/date match `@tagName(yyyy-mm-dd)`.
+2. The scripts and Keyboard Maestro macros are accessible in the `scripts` directory from the zip:
+    - **dueRefresh** = Script that add/amend/remove tags to `@dueTomorrow`, `@dueToday` and `@pastDue` items when the due tag/date match `@tagName(yyyy-mm-dd)`.
       - It remove any `@defer` tags if the tag date expired (ex. `@defer(2011-03-02)` where the date is <= today)
       - It does not add @pastDue tags on items tagged with `@done`, `@status(completed)`, `@status(delivered)` or `@status(cancelled)`
-    - `doneSort` = Script that group and sort @done items at the bottom of the project list of items in ascending order. Items with a @status tag are then pushed completely at the bottom and sorted by ascending @done date.
+    - **doneSort** = Script that group and sort `@done(date)` items at the bottom of the project list of items in ascending order by date. Items with a `@status` tag are then pushed at the bottom and sorted by ascending `@done(date)` as well.
 3. General script usage instructions available on TP3 guide and support forum.
 
-[download]: https://github.com/drootz/TaskPaperTheme-TomorrowEighties/archive/v1.3.zip
+#### "dueRefresh" script output example:
+
+![Preview of a taskpaper with the Light StyleSheet applied](https://raw.githubusercontent.com/drootz/TaskPaperTheme-TomorrowEighties/master/preview/light.png)
+
+#### "doneSort" script output example:
+
+![Preview of a taskpaper with the Light StyleSheet applied](https://raw.githubusercontent.com/drootz/TaskPaperTheme-TomorrowEighties/master/preview/light.png)
+
+[download]: https://github.com/drootz/TaskPaperTheme-TomorrowEighties/archive/v1.4.zip
 
 
 
