@@ -1,17 +1,18 @@
 # Configuration Files, StyleSheets and Scripts for TaskPaper3
 
-* *Tomorrow Night Eighties* inspired themes
-* *Omnifocus* inspired default searches and tags/contexts
+- *Tomorrow Night Eighties* inspired themes
+- *Omnifocus* inspired default searches and tags/contexts
+- *Cool Scripts* to help getting organized faster
 
 ![Preview of a taskpaper with the Dark StyleSheet applied](https://raw.githubusercontent.com/drootz/TaskPaperTheme-TomorrowEighties/master/preview/dark.png)
 ![Preview of a taskpaper with the Light StyleSheet applied](https://raw.githubusercontent.com/drootz/TaskPaperTheme-TomorrowEighties/master/preview/light.png)
 
 These StyleSheets and Configuration Files for [TaskPaper](http://www.taskpaper.com) are great if:
 
-* You are a "Tomorrow Night Eighties" theme enthusiast
-* You like Omnifocus style default searches
-* You like having similar color scheme between your Day/Night time themes
-* You need inspirations to build you own theme & config files of yours
+- You are a "Tomorrow Night Eighties" theme enthusiast
+- You like Omnifocus style default searches
+- You like having similar color scheme between your Day/Night time themes
+- You need inspirations to build you own theme & config files of yours
 
 ## Install the StyleSheets
 
@@ -27,8 +28,8 @@ These StyleSheets and Configuration Files for [TaskPaper](http://www.taskpaper.c
 3. Go back a level in the `StyleSheet` directory and open the `Configurations` directory
     - You should now be located in `/Application Support/Taskpaper/Configurations`
 3. Copy and overwrite both `searches.taskpaper` and `tags.taskpaper` files from the zip `Configurations` directory to the TaskPaper `Configurations` directory
-    - I recommend backing up the files in `/Application Support/Taskpaper/Configurations` before proceeding in case you need to revert to the default settings at a later date.
-4. Done.
+
+> I recommend backing up the files in `/Application Support/Taskpaper/Configurations` before proceeding in case you need to revert to the default settings at a later date.
 
 ## Get the Scripts
 
@@ -40,7 +41,8 @@ These StyleSheets and Configuration Files for [TaskPaper](http://www.taskpaper.c
 
 #### 1. dueRefresh
 
-Script that add/amend/remove tags to `@dueTomorrow`, `@dueToday` and `@pastDue` items when the `@due` tag match the format `@due(yyyy-mm-dd)`. I does more:
+Script that add/amend/remove tags to `@dueTomorrow`, `@dueToday` and `@pastDue` items when the `@due` tag match the format `@due(yyyy-mm-dd)`. It does more:
+
   - It remove any `@defer` tags if the tag date expired (ex. `@defer(2011-03-02)` where the date is <= today)
   - It does not add @pastDue tags on items tagged with `@done`, `@status(completed)`, `@status(delivered)` or `@status(cancelled)`
 
