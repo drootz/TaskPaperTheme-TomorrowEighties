@@ -50,13 +50,13 @@ Script that add/amend/remove tags to `@dueTomorrow`, `@dueToday` and `@pastDue` 
 
 ![Preview of a taskpaper with the Light StyleSheet applied](https://raw.githubusercontent.com/drootz/TaskPaperTheme-TomorrowEighties/master/scripts/dueRefresh/dueRefreshScriptExample.png)
 
-#### 2. doneSort
+#### 2. sortDone
 
 Script that group and sort `@done(date)` items at the bottom of the project list in ascending order by date. Items with a `@status` tag are then pushed at the bottom and sorted by ascending `@done(date)` as well.
 
 ##### Output Example:
 
-![Preview of a taskpaper with the Light StyleSheet applied](https://raw.githubusercontent.com/drootz/TaskPaperTheme-TomorrowEighties/master/scripts/doneSort/doneSortScriptExample.png)
+![Preview of a taskpaper with the Light StyleSheet applied](https://raw.githubusercontent.com/drootz/TaskPaperTheme-TomorrowEighties/master/scripts/doneSort/sortDoneScriptExample.png)
 
 [download]: https://github.com/drootz/TaskPaperTheme-TomorrowEighties/archive/master.zip
 
