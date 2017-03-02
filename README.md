@@ -56,7 +56,7 @@ Script that group and sort `@done(date)` items at the bottom of the project list
 
 ##### Output Example:
 
-![Preview of a taskpaper with the Light StyleSheet applied](https://raw.githubusercontent.com/drootz/TaskPaperTheme-TomorrowEighties/master/scripts/doneSort/sortDoneScriptExample.png)
+![Preview of a taskpaper with the Light StyleSheet applied](https://raw.githubusercontent.com/drootz/TaskPaperTheme-TomorrowEighties/master/scripts/sortDone/sortDoneScriptExample.png)
 
 [download]: https://github.com/drootz/TaskPaperTheme-TomorrowEighties/archive/master.zip
 
