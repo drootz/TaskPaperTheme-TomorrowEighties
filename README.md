@@ -11,6 +11,7 @@ These StyleSheets and Configuration Files for [TaskPaper](http://www.taskpaper.c
 * You are a "Tomorrow Night Eighties" theme enthusiast
 * You like Omnifocus style default searches
 * You like having similar color scheme between your Day/Night time themes
+* You need inspirations to build you own theme & config files of yours
 
 ## Install the StyleSheets
 
@@ -32,22 +33,30 @@ These StyleSheets and Configuration Files for [TaskPaper](http://www.taskpaper.c
 ## Get the Scripts
 
 1. [Download the zip][download] and open the zip directory
-2. The scripts and Keyboard Maestro macros are accessible in the `scripts` directory from the zip:
-    - **dueRefresh** = Script that add/amend/remove tags to `@dueTomorrow`, `@dueToday` and `@pastDue` items when the due tag/date match `@tagName(yyyy-mm-dd)`.
-      - It remove any `@defer` tags if the tag date expired (ex. `@defer(2011-03-02)` where the date is <= today)
-      - It does not add @pastDue tags on items tagged with `@done`, `@status(completed)`, `@status(delivered)` or `@status(cancelled)`
-    - **doneSort** = Script that group and sort `@done(date)` items at the bottom of the project list of items in ascending order by date. Items with a `@status` tag are then pushed at the bottom and sorted by ascending `@done(date)` as well.
-3. General script usage instructions available on TP3 guide and support forum.
+2. The scripts and Keyboard Maestro macros are accessible in the `scripts` directory from the zip
+3. General script usage instructions are available on [TP3 user's guide](https://guide.taskpaper.com) or [TaskPaper support forum](http://support.hogbaysoftware.com/t/taskpaper-extensions-wiki/1628).
 
-#### "dueRefresh" script output example:
+### Scripts Description
+
+#### 1. dueRefresh
+
+Script that add/amend/remove tags to `@dueTomorrow`, `@dueToday` and `@pastDue` items when the `@due` tag match the format `@due(yyyy-mm-dd)`. I does more:
+  - It remove any `@defer` tags if the tag date expired (ex. `@defer(2011-03-02)` where the date is <= today)
+  - It does not add @pastDue tags on items tagged with `@done`, `@status(completed)`, `@status(delivered)` or `@status(cancelled)`
+
+##### Output Example:
 
 ![Preview of a taskpaper with the Light StyleSheet applied](https://raw.githubusercontent.com/drootz/TaskPaperTheme-TomorrowEighties/master/scripts/dueRefresh/dueRefreshScriptExample.png)
 
-#### "doneSort" script output example:
+#### 2. doneSort
+
+Script that group and sort `@done(date)` items at the bottom of the project list in ascending order by date. Items with a `@status` tag are then pushed at the bottom and sorted by ascending `@done(date)` as well.
+
+##### Output Example:
 
 ![Preview of a taskpaper with the Light StyleSheet applied](https://raw.githubusercontent.com/drootz/TaskPaperTheme-TomorrowEighties/master/scripts/doneSort/doneSortScriptExample.png)
 
-[download]: https://github.com/drootz/TaskPaperTheme-TomorrowEighties/archive/v1.4.zip
+[download]: https://github.com/drootz/TaskPaperTheme-TomorrowEighties/archive/master.zip
 
 
 
