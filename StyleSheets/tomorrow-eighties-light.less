@@ -474,3 +474,21 @@ item[data-status="completed"][data-type=project] {
       color: fade(@text-color, 35%);
   }
 }
+
+item[data-stats] {
+    font-size: @user-font-size;
+    font-family: hack;
+    color: @text-color;
+    font-style: normal;
+    > run[content] {
+        text-strikethrough: none;
+        color: @text-color;
+    }
+    > run[tag] {
+        text-strikethrough: none;
+        color: fade(@text-color, 65%);
+    }
+    > run[tagvalue] {
+      color: @text-color;
+    }
+}

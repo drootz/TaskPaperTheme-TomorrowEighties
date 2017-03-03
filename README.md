@@ -58,6 +58,36 @@ Script that group and sort `@done(date)` items at the bottom of the project list
 
 ![Preview of a taskpaper with the Light StyleSheet applied](https://raw.githubusercontent.com/drootz/TaskPaperTheme-TomorrowEighties/master/scripts/sortDone/sortDoneScriptExample.png)
 
+#### 3. statsReport
+
+Reporting helper script that output count of @tags or @tags(attribute), and/or sum of @tags(attribute) in appended project(s). (*Start creating and defining your reporting outputs after line 260 of the script file*) Functions description and usage examples are embedded in code.
+
+Ensure to use one of themes in this Repo or ensure to append the following scope example at the  your theme.less files. The use of a monospace font enhance the visual consumption of the output data as shown in the following example image.
+
+```css
+item[data-stats] {
+    font-size: @user-font-size;
+    font-family: hack; // Hack or any other monospace font
+    color: @text-color;
+    font-style: normal;
+    > run[content] {
+        text-strikethrough: none;
+        color: @text-color;
+    }
+    > run[tag] {
+        text-strikethrough: none;
+        color: fade(@text-color, 65%);
+    }
+    > run[tagvalue] {
+      color: @text-color;
+    }
+}
+```
+
+##### Output Example:
+
+![Preview of a taskpaper with the Light StyleSheet applied](https://raw.githubusercontent.com/drootz/TaskPaperTheme-TomorrowEighties/master/scripts/statsReport/statsReportExample.png)
+
 [download]: https://github.com/drootz/TaskPaperTheme-TomorrowEighties/archive/master.zip
 
 
