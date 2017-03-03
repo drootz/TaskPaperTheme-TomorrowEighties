@@ -60,7 +60,7 @@ Script that group and sort `@done(date)` items at the bottom of the project list
 
 #### 3. statsReport
 
-Reporting helper script that output count of @tags or @tags(attribute), and/or sum of @tags(attribute) in appended project(s). (*Start creating and defining your reporting outputs after line 260 of the script file*) Functions description and usage examples are embedded in code.
+Reporting helper script that output count of @tags or @tags(attribute), and/or sum of @tags(attribute) in appended project(s). (*Start creating and defining your reporting outputs after line 260 of the script file*) Functions descriptions and additional usage examples are embedded in the script file.
 
 Ensure to use one of themes in this Repo or ensure to append the following scope example at the  your theme.less files. The use of a monospace font enhance the visual consumption of the output data as shown in the following example image.
 
@@ -85,6 +85,28 @@ item[data-stats] {
 ```
 
 ##### Output Example:
+
+```javascript
+// Create as many "stats" project sections as you wish
+var statsProject1 = createOutputProject('DEMO - Sum Example Stats');
+var statsProject2 = createOutputProject('DEMO - Counter Example Stats');
+
+    // Example that output the sum of all @capacity tags with number attribute
+    // and output as percentage ex. @tag(0.1) => 10%
+    sumTagAsPercentage('@capacity', '@type = note and @capacity', statsProject1, '');
+
+    // Example that output the sum of all @capacity tags with number attribute
+    // and output as number ex. @tag(1) => 1
+    sumTagAsNumber('@capacity', '@type = note and @capacity', statsProject1, '');
+
+    // Simple Counter Example without attribute (count all @tag regardless of attribute)
+    tagCounter('@capacity', '@type = note and @capacity', statsProject2, '');
+
+    // Default Label Example
+    tagAttributeCounter('@status', 'active', '@type = project and @status', statsProject2, '');
+    // Parameter Label Example
+    tagAttributeCounter('@status', 'active', '@type = project and @status', statsProject2, '> Active Projects');
+```
 
 ![Preview of a taskpaper with the Light StyleSheet applied](https://raw.githubusercontent.com/drootz/TaskPaperTheme-TomorrowEighties/master/scripts/statsReport/statsReportExample.png)
 
