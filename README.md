@@ -84,7 +84,7 @@ item[data-stats] {
 }
 ```
 
-##### Output Example:
+##### Script and Output Example:
 
 ```javascript
 // Create as many "stats" project sections as you wish
