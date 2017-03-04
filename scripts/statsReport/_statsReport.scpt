@@ -1,4 +1,4 @@
-JsOsaDAS1.001.00bplist00ÑVscript_.+/**
+JsOsaDAS1.001.00bplist00ÑVscript_.?/**
 * _statsReport script
 *
 * Reporting helper script output count of @tags and/or sum of @tags(attribute) in appended project(s)
@@ -41,14 +41,14 @@ function TaskPaperContextScript(editor, options) {
 
     /**
     * FUNCTION sumTagAsPercentage();
-    * Sum all number values for a given @tag and in a given search 'path'. 
+    * Sum all the number attributes for a given @tag and in a given search 'path'. 
     * It then append results as percentage to a given 'project'.
     *
     * PARAMETERS:
     * 'tag' as String (with leading @)
     * 'tagPath' as String (in an TaskPaper eval/search format => '@type = project and (@status = active)//@type = note')
     * 'outputProject' as TaskPaper Project Item
-    * 'label' as String (pass '' to use defaul label)
+    * 'label' as String (pass '' to use default label)
     */
     function sumTagAsPercentage(tag, tagPath, outputProject, label) {
 
@@ -100,14 +100,14 @@ function TaskPaperContextScript(editor, options) {
 
     /**
     * FUNCTION sumTagAsNumber();
-    * Sum all number values for a given @tag and in a given search 'path'. 
+    * Sum all the number attributes for a given @tag and in a given search 'path'. 
     * It then append results as number to a given 'project'.
     *
     * PARAMETERS:
     * 'tag' as String (with leading @)
     * 'tagPath' as String (in an TaskPaper eval/search format => '@type = project and (@status = active)//@type = note')
     * 'outputProject' as TaskPaper Project Item
-    * 'label' as String (pass '' to use defaul label)
+    * 'label' as String (pass '' to use default label)
     */
     function sumTagAsNumber(tag, tagPath, outputProject, label) {
       var tagArray = outline.evaluateItemPath(tagPath),
@@ -146,7 +146,7 @@ function TaskPaperContextScript(editor, options) {
     * 'tag' as String (with leading @)
     * 'tagPath' as String (in an TaskPaper eval/search format => '@type = project and (@status = active)//@type = note')
     * 'outputProject' as TaskPaper Project Item
-    * 'label' as String (pass '' to use defaul label)
+    * 'label' as String (pass '' to use default label)
     */
     function tagCounter(tag, tagPath, outputProject, label) {
       var tagArray = outline.evaluateItemPath(tagPath),
@@ -184,7 +184,7 @@ function TaskPaperContextScript(editor, options) {
     * 'tagAttribute' as String (ex. 'active' to count @tag(active))
     * 'tagPath' as String (in an TaskPaper eval/search format => '@type = project and (@status = active)//@type = note')
     * 'outputProject' as TaskPaper Project Item
-    * 'label' as String (pass '' to use defaul label)
+    * 'label' as String (pass '' to use default label)
     * 
     * TODO: Allow multiple tag attributes as Array parameter
     */
@@ -314,4 +314,4 @@ function TaskPaperContextScript(editor, options) {
 
 var string = Application("TaskPaper").documents[0].evaluate({
   script: TaskPaperContextScript.toString()
-});                              .A jscr  úÞÞ­
+});                              .U jscr  úÞÞ­
