@@ -1,4 +1,4 @@
-JsOsaDAS1.001.00bplist00ÑVscript_.7/**
+JsOsaDAS1.001.00bplist00ÑVscript_.+/**
 * _statsReport script
 *
 * Reporting helper script output count of @tags and/or sum of @tags(attribute) in appended project(s)
@@ -45,7 +45,7 @@ function TaskPaperContextScript(editor, options) {
     * It then append results as percentage to a given 'project'.
     *
     * PARAMETERS:
-    * 'tag' as String (without leading @)
+    * 'tag' as String (with leading @)
     * 'tagPath' as String (in an TaskPaper eval/search format => '@type = project and (@status = active)//@type = note')
     * 'outputProject' as TaskPaper Project Item
     * 'label' as String (pass '' to use defaul label)
@@ -104,7 +104,7 @@ function TaskPaperContextScript(editor, options) {
     * It then append results as number to a given 'project'.
     *
     * PARAMETERS:
-    * 'tag' as String (without leading @)
+    * 'tag' as String (with leading @)
     * 'tagPath' as String (in an TaskPaper eval/search format => '@type = project and (@status = active)//@type = note')
     * 'outputProject' as TaskPaper Project Item
     * 'label' as String (pass '' to use defaul label)
@@ -143,7 +143,7 @@ function TaskPaperContextScript(editor, options) {
     * It then append results as number to a given 'project'.
     *
     * PARAMETERS:
-    * 'tag' as String (without leading @)
+    * 'tag' as String (with leading @)
     * 'tagPath' as String (in an TaskPaper eval/search format => '@type = project and (@status = active)//@type = note')
     * 'outputProject' as TaskPaper Project Item
     * 'label' as String (pass '' to use defaul label)
@@ -180,7 +180,7 @@ function TaskPaperContextScript(editor, options) {
     * It then append results as number to a given 'project'.
     *
     * PARAMETERS:
-    * 'tag' as String (without leading @)
+    * 'tag' as String (with leading @)
     * 'tagAttribute' as String (ex. 'active' to count @tag(active))
     * 'tagPath' as String (in an TaskPaper eval/search format => '@type = project and (@status = active)//@type = note')
     * 'outputProject' as TaskPaper Project Item
@@ -314,4 +314,4 @@ function TaskPaperContextScript(editor, options) {
 
 var string = Application("TaskPaper").documents[0].evaluate({
   script: TaskPaperContextScript.toString()
-});                              .M jscr  úÞÞ­
+});                              .A jscr  úÞÞ­
